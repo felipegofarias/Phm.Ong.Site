@@ -2715,12 +2715,19 @@ body.is-touch #banner {
 }
 
 .main-login{
-  background-color: white;
-  width: 30%;
+  background-color:#ffffff;
+  width: 27%;
   max-width: 700px;
-  min-height: 70vh;
-  padding: 4rem;
-  box-shadow: 5px 5px 15px;
+  min-height: 60vh;
+  padding: 3rem;
+  border-radius: 10px;
+}
+.main-cadastrar{
+  
+  width: 100%;
+  max-width: 700px;
+  min-height: 60vh;
+  padding: 0rem;
   border-radius: 10px;
 }
 
@@ -2739,7 +2746,7 @@ body.is-touch #banner {
 .textfield label{
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10px;
   transform: translateY(3px);
   font-weight: 500;
   color: #00695C;
@@ -2964,7 +2971,7 @@ body.is-touch #banner {
 --------------------------------------------------------------*/
 
 .wrapper {
-  padding: 2em 0 4em 0 ;
+  padding: 1em 0 4em 0 ;
 }
 
   .wrapper > .inner {

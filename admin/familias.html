@@ -68,10 +68,10 @@
                     </a>
                 </li>
                 <li>
-                   <a href="docacao.html">
+                   <a href="usuario.html">
                        <i class="fa fa-table fa-2x"></i>
                         <span class="nav-text">
-                            Doações
+                            Usuario
                         </span>
                     </a>
                 </li>
@@ -92,6 +92,16 @@
                     </a>
                 </li>
             </ul>
+            <ul class="Cadastrar">
+                <li>
+                   <a href="cadastrar.html">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Cadastrar
+                        </span>
+                    </a>
+                </li>  
+            </ul>
 
             <ul class="logout">
                 <li>
@@ -105,16 +115,7 @@
             </ul>
         </nav>
 
-        
-        <div class="graficosFam">
-            <div class="container container-chart" style="position: relative; height:40vh; width:60vw">
-                <div class="card card-header">Familias cadastradas</div>
-                <canvas id="linechart" class="line-chart"></canvas>
-            </div>
-        </div>
-
         <div id="familia" class="container">
-            
             <table id="table_id" class="display">
                 <thead>
                   <tr>
@@ -151,14 +152,17 @@
                 </tbody>
               </table>
         </div>
-    </div>
-   
 
-        
-        
-        
-        
-        
+        <div class="graficosFam">
+            <div class="container container-chart" style="position: relative; height:40vh; width:60vw">
+                <div class="card card-header">Familias cadastradas</div>
+                <canvas id="linechart" class="line-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    
+
         <!--Declaração bootstrap JS-->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -192,13 +196,13 @@
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+            responsive: true
         }
     });
+
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
    </script>
 
   

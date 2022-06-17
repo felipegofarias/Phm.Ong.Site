@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHM informatização</title>
+
+    <!-- Favicons -->
+  <link href="/PHM/img/logo2.jpeg" rel="icon">
+
+  <!--Declaração do bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+  
+
+  <link rel="stylesheet" type="text/css" href="/admin/styleadm.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+  <script src="/node_modules/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+
+  </head>
+  <body  ><div class="area"></div><nav class="main-menu">
+            <ul>
+                <li class="name">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span class="nav-text">Administrador</span>
+                </li>
+                <li>
+                    <a href="/admin/indexadm.html">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Menu
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Dados
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="familias.html">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            Familias
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a href="graficos.html">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            Graficos
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="#">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            Usuario
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="#">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                        <span class="nav-text">
+                            Valores
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            Documentation
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="Cadastrar">
+              <li>
+                 <a href="cadastrar.html">
+                       <i class="fa fa-power-off fa-2x"></i>
+                      <span class="nav-text">
+                          Cadastrar
+                      </span>
+                  </a>
+              </li>  
+          </ul>
+
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+
+        
+        <div id="doacao" class="container">
+            <!-- Botão para acionar modal -->
+            <button id="btn-modal" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                Cadastrar
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="TituloModalCentralizado">Cadastrar um novo usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="main-cadastrar" >
+                                <div class="login">
+                                    <form onsubmit="addNewUser()" >
+                                        <div class="logoLogin">
+                                            <span class="image"><img src="/img/logo.jpeg" alt="" /></span>
+                                        </div>
+                                        <h1>CADASTRO</h1>
+                                        <div class="textfield">
+                                            <input type="text" name="cpf" id="cpf" placeholder=" " required>
+                                            <div class="underline"></div>
+                                            <label for="usuario">CPF</label>
+                                        </div>
+                                        <div class="textfield">
+                                            <input type="text" name="nome" id="nome" placeholder=" " required>
+                                            <div class="underline"></div>
+                                            <label for="usuario">Nome</label>
+                                        </div>
+                                        <div class="textfield">
+                                            <input type="text" name="email" id="email" placeholder=" " required>
+                                            <div class="underline"></div>
+                                            <label for="usuario">Email</label>
+                                        </div>
+                                        <div class="textfield">
+                                            <input type="text" name="senha" id="senha" placeholder="  " required>
+                                            <div class="underline"></div>
+                                            <label for="senha">Senha</label>
+                                        </div>
+                                        <button  class="btn-cadastrar" type="submit">Cadastrar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal pequeno -->
+            <button id="modal_busca" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target=".bd-example-modal-sm">
+                Buscar
+            </button>
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="TituloModalCentralizado">Busca por CPF</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form onsubmit="busca()">
+                        <label>CPF: 
+                            <input id="busca" type="search" name="cpf" placeholder="" aria-controls="table_idd">
+                        </label>
+                    <button  class="btn-cadastrar" type="submit">buscar</button>
+                    </form>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            
+            <div class="card card-header">Doações</div>
+            <table id="table_idd" class="display">
+                <thead>
+                  <tr>
+                    <th name="cpf" scope="col">Id</th>
+                    <th name="email" scope="col">CPF</th>
+                    <th name="nome" scope="col">nome</th>
+                    <th name="email" scope="col">email</th>
+                    <th name="senha" scope="col">senha</th>
+                    <th name="cpf" scope="col">Data Atualização</th>
+                    <th name="nome" scope="col">ativo</th>
+                    <th name="senha" scope="col">Data cadastro</th>
+                  </tr>
+                </thead>
+                
+              </table>
+        </div>
+
+        
+        
+        
+      
+        <!--Declaração bootstrap JS-->
+  
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
+
+  
+   <!-- CDN chart.js -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+   
+   <script src="mainadm.js"></script>
+
+
+
+</body>
+    </html>

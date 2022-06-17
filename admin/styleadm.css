@@ -161,9 +161,21 @@ height: 100%;
 
 #doacao .card{
   background: #fff;
-  margin-top: 3em;
+  margin-top: 0em;
   border-radius: 8px;
   width: 100%;
+}
+
+#btn-modal{
+  margin-top: 3em;
+  border-radius: 8px;
+}
+
+
+#modal_busca{
+  margin-top: 3em;
+  margin-right: 5px;
+  border-radius: 8px;
 }
 
 
@@ -252,6 +264,8 @@ border-radius: 8px;
   margin-top: 50px;
 }
 
+
+
 .graficosFam{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -283,7 +297,7 @@ border-radius: 8px;
 }
 
 #familia{
-  margin-top: 40vh;
+  margin-top: 50px;
 }
 
 #familiaGf .dataTables_wrapper input {
@@ -296,17 +310,39 @@ border-radius: 8px;
   margin: 5px;
 }
   
-
-
-
 .wrapper {
-  
   width: 100%;
   align-items: stretch;
-  perspective: 1500px; 
 }
 
 
+.btn-cadastrar{
+  width: 100%;
+  
+}
 
+.btn-cadastrar[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.4;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
 
+@media screen and (max-width: 480px) {
 
+  #doacao #table_id{
+    width: 100%;
+  padding: 50px;
+  }
+
+  .wrapper {
+  
+    width: 150%;
+  
+  }
+
+  }
