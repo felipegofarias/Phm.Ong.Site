@@ -1,7 +1,7 @@
 
 $(document).ready( function() {
     $('#table_idd').DataTable({
-      ajax: `https://localhost:4438/Usuario/ListarTodos`,
+      ajax: `https://localhost:teste/Usuario/ListarTodos`,
       columns: [
           { data: 'id' },
           { data: 'cpf' },
@@ -17,7 +17,7 @@ $(document).ready( function() {
 
 
 function addNewUser(){
-  axios.post(`https://localhost:44384/Usuario/Cadatrar`, {
+  axios.post(`https://localhost:teste/Usuario/Cadatrar`, {
    cpf : document.getElementById("cpf").value,
    nome  : document.getElementById("nome").value,
    email : document.getElementById("email").value,
@@ -35,7 +35,7 @@ function addNewUser(){
 
 function addProjeto(){
   event.preventDefault()
-  axios.post(`https://localhost:44384/Projeto/Cadatrar`, {
+  axios.post(`https://localhost:teste/Projeto/Cadatrar`, {
    nome : document.getElementById("nome").value,
    estado  : document.getElementById("estado").value,
    cidade : document.getElementById("cidade").value
